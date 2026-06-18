@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Detective — Daily</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">FANATICS</span>
+      <span class="brand-tag">COLLECT</span>
+    </div>
+    <div class="title-stack">
+      <h1>Card Detective</h1>
+      <p class="subtitle" id="date-line"></p>
+    </div>
+    <div class="streak" id="streak-display">Streak <span id="streak-num">0</span></div>
+  </header>
+
+  <main id="game-root">
+    <section id="game-view">
+      <div class="zoom-card">
+        <div class="zoom-frame" id="zoom-frame">
+          <img id="zoom-img" alt="Mystery card crop" />
+        </div>
+        <p class="hint" id="hint-line">Whose card is this?</p>
+      </div>
+
+      <div class="zoom-ladder" id="zoom-ladder">
+        <div class="rung active"  data-rung="0"><span class="rung-label">Detail</span></div>
+        <div class="rung"         data-rung="1"><span class="rung-label">Closer</span></div>
+        <div class="rung"         data-rung="2"><span class="rung-label">Wider</span></div>
+        <div class="rung"         data-rung="3"><span class="rung-label">Pulled back</span></div>
+        <div class="rung"         data-rung="4"><span class="rung-label">Full card</span></div>
+      </div>
+
+      <form id="guess-form" class="guess-row">
+        <input id="guess-input" type="text" autocomplete="off" placeholder="Type a player name…" />
+        <button id="guess-btn" type="submit">Guess</button>
+      </form>
+      <div class="attempts" id="attempts-line">Guess 1 of 5</div>
+      <div class="feedback" id="feedback"></div>
+    </section>
+
+    <section id="reveal-view" hidden>
+      <div class="reveal-result">
+        <h2 id="reveal-title"></h2>
+        <p id="reveal-tagline"></p>
+      </div>
+      <div class="reveal-cardstack">
+        <img id="reveal-card-img" alt="Full card reveal" />
+      </div>
+      <div class="reveal-meta">
+        <p class="reveal-player" id="reveal-player"></p>
+        <p class="reveal-context" id="reveal-context"></p>
+        <p class="reveal-story" id="reveal-story"></p>
+      </div>
+      <div class="reveal-cta">
+        <a id="bid-link" class="cta cta-primary" href="#" target="_blank" rel="noopener">
+          Bid on this card on Collect
+        </a>
+        <a id="more-link" class="cta cta-secondary" href="#" target="_blank" rel="noopener">
+          See more cards by this player
+        </a>
+        <button id="share-btn" class="cta cta-ghost">Share my result</button>
+      </div>
+      <p class="next-line">Next puzzle in <span id="next-time"></span></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Prototype · Cards sourced live from <a href="https://www.fanaticscollect.com/marketplace?type=WEEKLY">Fanatics Collect Weekly Auctions</a> · Crops generated from curated focal points</p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
