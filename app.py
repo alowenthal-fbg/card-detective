@@ -24,7 +24,7 @@ from flask import Flask, jsonify, render_template, request, send_from_directory
 app = Flask(__name__, static_folder="static")
 
 DATA_PATH = Path(__file__).parent / "data" / "cards.json"
-EPOCH = dt.date(2026, 1, 1)
+EPOCH = dt.date(2025, 12, 29)  # offset from Mystery Signature so the two prototypes land on different cards on the same day
 ZOOM_RUNGS = 5  # 1 starting crop + 4 progressive zoom-outs
 
 

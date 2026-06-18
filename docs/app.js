@@ -2,7 +2,8 @@
   "use strict";
 
   // --- Config ----------------------------------------------------------------
-  const EPOCH = new Date(Date.UTC(2026, 0, 1));
+  // Offset from Mystery Signature so the two prototypes land on different cards on the same day.
+  const EPOCH = new Date(Date.UTC(2025, 11, 29));
   const ZOOM_SCALES = [10, 5, 3, 1.8, 1.0];
   const MAX_ATTEMPTS = ZOOM_SCALES.length;
 
